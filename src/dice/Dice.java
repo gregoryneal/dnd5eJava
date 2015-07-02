@@ -47,6 +47,38 @@ public class Dice
 		return dieList;
 	}
 	
+	public int rollAdvantage()
+	{
+		int roll1 = this.rollDice(new Dice()).get(0);
+		int roll2 = this.rollDice(new Dice()).get(0);
+		
+		if(roll1 > roll2)
+		{
+			return roll1;
+		}
+		
+		else
+		{
+			return roll2;
+		}
+	}
+	
+	public int rollDisadvantage()
+	{
+		int roll1 = this.rollDice(new Dice()).get(0);
+		int roll2 = this.rollDice(new Dice()).get(0);
+		
+		if(roll1 < roll2)
+		{
+			return roll1;
+		}
+		
+		else
+		{
+			return roll2;
+		}
+	}
+	
 	private int randomInteger(int max)
 	{
 		Random rando = new Random();
