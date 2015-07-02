@@ -9,6 +9,8 @@ public class Dice
 	
 	private int numberOfRolls;
 	private int numberOfSides;
+	
+	public static Dice NULL = new Dice(1,0);
 
 	//initializes a 1d20 die
 	public Dice() 
