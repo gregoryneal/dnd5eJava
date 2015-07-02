@@ -23,8 +23,32 @@ public class Dice
 		numberOfSides = numSides;
 	}
 	
+	//rolls this Dice instance
+	public List<Integer> roll()
+	{
+		//toRoll.numberOfRolls entries:
+		//0     : sum of all rolls
+		//1 - N : each dice roll in order
+		List<Integer> dieList = new ArrayList<Integer>();
+		dieList.add(0);
+		
+		int currRoll = 0;
+		int sum = 0;
+		
+		for(int i = 0; i < this.numberOfRolls; i++)
+		{
+			currRoll = randomInteger(this.numberOfSides);
+			dieList.add(currRoll);
+			sum += currRoll;
+		}
+		
+		dieList.set(0,sum);
+		
+		return dieList;
+	}
 	
-	public List<Integer> rollDice(Dice toRoll)
+	//rolls another Dice instance without instantiating a new one outside of this class
+	public List<Integer> roll(Dice toRoll)
 	{
 		//toRoll.numberOfRolls entries:
 		//0     : sum of all rolls
@@ -49,8 +73,8 @@ public class Dice
 	
 	public int rollAdvantage()
 	{
-		int roll1 = this.rollDice(new Dice()).get(0);
-		int roll2 = this.rollDice(new Dice()).get(0);
+		int roll1 = roll().get(0);
+		int roll2 = roll().get(0);
 		
 		if(roll1 > roll2)
 		{
@@ -65,8 +89,8 @@ public class Dice
 	
 	public int rollDisadvantage()
 	{
-		int roll1 = this.rollDice(new Dice()).get(0);
-		int roll2 = this.rollDice(new Dice()).get(0);
+		int roll1 = roll(new Dice()).get(0);
+		int roll2 = roll(new Dice()).get(0);
 		
 		if(roll1 < roll2)
 		{
@@ -77,6 +101,12 @@ public class Dice
 		{
 			return roll2;
 		}
+	}
+	
+	public String toString()
+	{
+		String str = String.valueOf(this.numberOfRolls) + "d" + String.valueOf(this.numberOfSides);
+		return str;
 	}
 	
 	private int randomInteger(int max)
