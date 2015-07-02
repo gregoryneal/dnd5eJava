@@ -3,13 +3,23 @@ package classes;
 import java.util.List;
 
 import abilities.AbilityTypes;
+import abilities.SkillTypes;
 import weapons.WeaponTypes;
 import armor.ArmorTypes;
+import dice.Dice;
+import tools.ToolTypes;
 
 public interface ClassInterface {
-	public Integer[] hitDie();
-	public AbilityTypes primaryAbilityType();
+	public List<ToolTypes> toolProficiencies();
+	public List<SkillTypes> skillProficiencies();
+	public int baseHPAtFirstLevel();
+	public AbilityTypes hpAtFirstLevelAbilityModifier();
+	public Dice hitDie();
+	public List<AbilityTypes> primaryAbilityType();
 	public List<AbilityTypes> savingThrowProficiencies();
 	public List<ArmorTypes> armorProficiencies();
 	public List<WeaponTypes> weaponProficiencies();
+	public String toString();
+	public String description();
+	public int proficiencyBonus();
 }
