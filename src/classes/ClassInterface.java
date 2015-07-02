@@ -7,7 +7,7 @@ import abilities.SkillTypes;
 import weapons.WeaponTypes;
 import armor.ArmorTypes;
 import dice.Dice;
-import tools.ToolTypes;
+import equipment.ToolTypes;
 
 public interface ClassInterface {
 	public List<ToolTypes> toolProficiencies();
@@ -21,5 +21,5 @@ public interface ClassInterface {
 	public List<WeaponTypes> weaponProficiencies();
 	public String toString();
 	public String description();
-	public int proficiencyBonus();
+	public int proficiencyBonus(int level);
 }
