@@ -30,22 +30,22 @@ public class CurrencyObject
 	
 	public int convertToSilver()
 	{
-		return 0;
+		return this.currType.convertToSilver(this.currAmount);
 	}
 	
 	public int convertToElectrum()
 	{
-		return 0;
+		return this.currType.convertToElectrum(this.currAmount);
 	}
 	
 	public int convertToGold()
 	{
-		return 0;
+		return this.currType.convertToGold(this.currAmount);
 	}
 	
 	public int convertToPlatinum()
 	{
-		return 0;
+		return this.currType.convertToPlatinum(this.currAmount);
 	}
 	
 	
