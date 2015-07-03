@@ -14,11 +14,6 @@ public class Barbarian implements ClassInterface {
 	
 	List<SkillTypes> st = new ArrayList<>();
 
-	//List<AbilityTypes> stp = new ArrayList<>();
-	//stp.add(AbilityTypes.STRENGTH);
-	
-	
-
 	public Barbarian() 
 	{
 		
