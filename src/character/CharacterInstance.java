@@ -1,46 +1,55 @@
 package character;
 
 import java.lang.Math;
+import java.util.List;
+import java.util.ArrayList;
 
+import abilities.AbilityTypes;
 import classes.ClassTypes;
 import race.RaceTypes;
 import serialization.Serialize;
+import stats.Stat;
 
 public class CharacterInstance implements Serialize
 {
 	
-	public String notSet = "not set";
+	private String notSet = "not set";
 	
 	//self explanatory
 	private String name;
 	private ClassTypes classType;
 	private RaceTypes race;
+	private List<Stat> stats = new ArrayList<>();
 
-	/*character stats array:
-	 * 0 - STR
-	 * 1 - DEX
-	 * 2 - CON
-	 * 3 - INT
-	 * 4 - WIS
-	 * 5 - CHA
-	 */
-	private Integer[] Stats;
-	
-	/*character stat modifiers
-	 * 0 - STR MOD
-	 * 1 - DEX MOD
-	 * 2 - CON MOD
-	 * 3 - INT MOD
-	 * 4 - WIS MOD
-	 * 5 - CHA MOD
-	 */
-	private Integer[] StatModifiers;
-	
 	public CharacterInstance() 
 	{
 		name = notSet;
 		classType = ClassTypes.NONE;
 		race = RaceTypes.NONE;
+		initializeStats();
+	}
+	
+	private void initializeStats()
+	{
+		int i = 0;
+		
+		for(AbilityTypes stat : AbilityTypes.values())
+		{			
+			if(!stat.toString().equalsIgnoreCase("none"))
+			{				
+				this.stats.add(new Stat(AbilityTypes.values()[i],0));
+			}
+			
+			i++;
+		}
+	}
+	
+	public void printStats()
+	{
+		for(Stat stat : stats)
+		{
+			System.out.println(stat.toString());
+		}
 	}
 	
 	public String getName()
@@ -75,21 +84,15 @@ public class CharacterInstance implements Serialize
 	{
 		classType = cT;
 	}
-
-	public int getStats(int index) {
-		return Stats[index];
-	}
-
-	public void setStats(int index, int value) {
-		Stats[index] = value;
-		setStatModifier(index,(int)Math.floor((value-10)/2));
-	}
-
-	public int getStatModifier(int index) {
-		return StatModifiers[index];
-	}
-
-	private void setStatModifier(int index, int value) {
-		StatModifiers[index] = value;
+	
+	public void setStat(AbilityTypes ability, int lvl)
+	{
+		for(int i = 0; i < stats.size(); i++)
+		{
+			if(stats.get(i).getAbility() == ability)
+			{
+				stats.get(i).setLevel(lvl);
+			}
+		}
 	}
 }
