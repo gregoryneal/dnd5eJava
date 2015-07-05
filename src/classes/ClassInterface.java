@@ -3,6 +3,7 @@ package classes;
 import java.util.List;
 
 import weapons.WeaponTypes;
+import classes.ClassTypes;
 import abilities.AbilityTypes;
 import abilities.SkillTypes;
 import armor.ArmorTypes;
@@ -11,6 +12,7 @@ import equipment.ToolTypes;
 
 public interface ClassInterface
 {
+	public ClassTypes getClassType();
 	public List<ToolTypes> toolProficiencies();
 	public List<SkillTypes> skillProficiencies();
 	public int baseHPAtFirstLevel();
