@@ -8,5 +8,12 @@ public enum AbilityTypes
 	CONSTITUTION,
 	INTELLIGENCE,
 	WISDOM,
-	CHARISMA
+	CHARISMA;
+	
+	@Override
+	public String toString()
+	{
+		String str = this.name();
+		return str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase();
+	}
 }
