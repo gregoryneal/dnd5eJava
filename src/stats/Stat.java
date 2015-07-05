@@ -7,18 +7,21 @@ public class Stat implements Serialize
 {
 	
 	private AbilityTypes ability;
-	private int value;
+	private int abilityLvl;
+	private int abilityMod;
 
 	public Stat()
 	{
 		ability = AbilityTypes.NONE;
-		value = 0;
+		abilityLvl = 0;
+		updateModifier();
 	}
 	
 	public Stat(AbilityTypes abilityType, int abilityLevel)
 	{
 		ability = abilityType;
-		value = abilityLevel;
+		abilityLvl = abilityLevel;
+		updateModifier();
 	}
 	
 	public AbilityTypes getAbility()
@@ -28,22 +31,41 @@ public class Stat implements Serialize
 	
 	public int getAbilityLevel()
 	{
-		return value;
+		return abilityLvl;
+	}
+	
+	public int getModifier()
+	{
+		return abilityMod;
 	}
 	
 	public void levelUp()
 	{
-		value++;
+		abilityLvl++;
+		updateModifier();
 	}
 	
 	public void addLevels(int amt)
 	{
-		value += amt;
+		abilityLvl += amt;
+		updateModifier();
 	}
 	
 	public void setLevel(int lvl)
 	{
-		value = lvl;
+		abilityLvl = lvl;
+		updateModifier();
+	}
+	
+	private void updateModifier()
+	{
+		abilityMod = (int)Math.floor((abilityLvl-10)/2);
+	}
+
+	@Override
+	public String toString()
+	{
+		return (ability.toString() + ": " + abilityLvl + ", " + abilityMod);
 	}
 
 }
