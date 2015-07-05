@@ -2,7 +2,8 @@ package armor;
 
 import armor.ArmorTypes;
 
-public enum ArmorListTypes {
+public enum ArmorListTypes
+{
 	PADDED			(ArmorTypes.LIGHT_ARMOR),
 	LEATHER			(ArmorTypes.LIGHT_ARMOR),
 	STUDDED_LEATHER	(ArmorTypes.LIGHT_ARMOR),

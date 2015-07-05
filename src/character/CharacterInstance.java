@@ -2,7 +2,10 @@ package character;
 
 import java.lang.Math;
 
-public class CharacterInstance {
+import serialization.Serialize;
+
+public class CharacterInstance implements Serialize
+{
 	
 	public String notSet = "not set";
 	

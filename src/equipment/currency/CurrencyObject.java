@@ -1,8 +1,9 @@
 package equipment.currency;
 
 import equipment.currency.Currency;
+import serialization.Serialize;
 
-public class CurrencyObject 
+public class CurrencyObject implements Serialize
 {
 	Currency currType;
 	int currAmount;

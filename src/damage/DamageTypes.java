@@ -1,6 +1,7 @@
 package damage;
 
-public enum DamageTypes {
+public enum DamageTypes
+{
 	//page 180 of phb
 	ACID,
 	BLUDGEONING,

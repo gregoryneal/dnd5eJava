@@ -1,5 +1,6 @@
 package equipment;
 
-public enum ToolTypes {
+public enum ToolTypes 
+{
 	NONE;
 }

@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Dice 
+import serialization.Serialize;
+
+public class Dice implements Serialize
 {
 	
 	private int numberOfRolls;

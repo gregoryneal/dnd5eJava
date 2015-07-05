@@ -1,6 +1,7 @@
 package abilities;
 
-public enum AbilityTypes {
+public enum AbilityTypes
+{
 	STRENGTH,
 	DEXTERITY,
 	CONSTITUTION,

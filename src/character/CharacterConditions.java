@@ -1,6 +1,7 @@
 package character;
 
-public enum CharacterConditions {
+public enum CharacterConditions
+{
 	BLINDED,
 	CHARMED,
 	DEAFENED,

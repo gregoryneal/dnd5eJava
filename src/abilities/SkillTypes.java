@@ -1,6 +1,7 @@
 package abilities;
 
-public enum SkillTypes {
+public enum SkillTypes
+{
 	ACROBATICS,
 	ANIMAL_HANDLING,
 	ARCANA,

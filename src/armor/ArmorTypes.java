@@ -1,6 +1,7 @@
 package armor;
 
-public enum ArmorTypes {
+public enum ArmorTypes
+{
 	LIGHT_ARMOR,
 	MEDIUM_ARMOR,
 	HEAVY_ARMOR,

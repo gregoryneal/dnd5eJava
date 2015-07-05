@@ -1,6 +1,7 @@
 package equipment.currency;
 
-public enum Currency {
+public enum Currency
+{
 	COPPER(1),
 	SILVER(10),
 	ELECTRUM(50),

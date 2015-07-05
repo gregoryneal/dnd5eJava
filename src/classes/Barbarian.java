@@ -9,8 +9,10 @@ import abilities.SkillTypes;
 import armor.ArmorTypes;
 import dice.Dice;
 import equipment.ToolTypes;
+import serialization.Serialize;
 
-public class Barbarian implements ClassInterface {
+public class Barbarian implements ClassInterface, Serialize
+{
 	
 	List<SkillTypes> st = new ArrayList<>();
 
@@ -109,6 +111,19 @@ public class Barbarian implements ClassInterface {
 	public String description() 
 	{
 		return "A fierce warrior of primitive background who can enter a battle rage";
+	}
+	
+	public List<Object> multiclassRequirements()
+	{
+		//mr.get(0) is the number of classes that are required, call it n.
+		//mr.get(1) is the first class, mr.get(2) is the first classes int requirement.
+		//etc up to mr.get(n) and mr.get(n+1)
+		List<Object> mr = new ArrayList<Object>();
+		mr.add(1);
+		mr.add(AbilityTypes.STRENGTH);
+		mr.add(new Integer(13));
+		
+		return null;
 	}
 
 	@Override
