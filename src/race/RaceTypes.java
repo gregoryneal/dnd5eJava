@@ -1,6 +1,7 @@
 package race;
 
 public enum RaceTypes {
+	NONE,
 	HILL_DWARF,
 	MOUNTAIN_DWARF,
 	HIGH_ELF,
@@ -14,5 +15,12 @@ public enum RaceTypes {
 	ROCK_GNOME,
 	HALF_ELF,
 	HALF_ORC,
-	TIEFLING
+	TIEFLING;
+	
+	@Override
+	public String toString()
+	{
+		String str = this.name();
+		return str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase();
+	}
 }

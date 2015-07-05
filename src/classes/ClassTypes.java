@@ -1,6 +1,7 @@
 package classes;
 
 public enum ClassTypes {
+	NONE,
 	BARBARIAN,
 	BARD,
 	CLERIC,

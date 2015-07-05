@@ -30,5 +30,20 @@ public class Stat implements Serialize
 	{
 		return value;
 	}
+	
+	public void levelUp()
+	{
+		value++;
+	}
+	
+	public void addLevels(int amt)
+	{
+		value += amt;
+	}
+	
+	public void setLevel(int lvl)
+	{
+		value = lvl;
+	}
 
 }

@@ -13,7 +13,6 @@ import serialization.Serialize;
 
 public class Barbarian implements ClassInterface, Serialize
 {
-	
 	List<SkillTypes> st = new ArrayList<>();
 
 	public Barbarian() 
@@ -139,6 +138,12 @@ public class Barbarian implements ClassInterface, Serialize
 			return 5;
 		else
 			return 6;
+	}
+
+	@Override
+	public ClassTypes getClassType()
+	{
+		return ClassTypes.BARBARIAN;
 	}
 
 }

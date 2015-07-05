@@ -2,6 +2,8 @@ package character;
 
 import java.lang.Math;
 
+import classes.ClassTypes;
+import race.RaceTypes;
 import serialization.Serialize;
 
 public class CharacterInstance implements Serialize
@@ -11,8 +13,8 @@ public class CharacterInstance implements Serialize
 	
 	//self explanatory
 	private String name;
-	private String classType;
-	private String race;
+	private ClassTypes classType;
+	private RaceTypes race;
 
 	/*character stats array:
 	 * 0 - STR
@@ -34,15 +36,11 @@ public class CharacterInstance implements Serialize
 	 */
 	private Integer[] StatModifiers;
 	
-	public CharacterInstance() {
+	public CharacterInstance() 
+	{
 		name = notSet;
-		classType = notSet;
-		race = notSet;
-		
-		for(int i = 0; i < Stats.length; i++)
-		{
-			Stats[i] = 0;
-		}
+		classType = ClassTypes.NONE;
+		race = RaceTypes.NONE;
 	}
 	
 	public String getName()
@@ -58,25 +56,24 @@ public class CharacterInstance implements Serialize
 		name = value;
 	}
 	
-	public String getRace()
+	public RaceTypes getRace()
 	{
-		if(!race.isEmpty())
-			return race;
-		else
-			return notSet;
+		return race;
 	}
 	
-	public void setRace(String value)
+	public void setRace(RaceTypes human)
 	{
-		race = value;
+		race = human;
 	}
 	
-	public String getClassType()
+	public ClassTypes getClassType()
 	{
-		if(!classType.isEmpty())
-			return classType;
-		else
-			return notSet;
+		return classType;
+	}
+	
+	public void setClassType(ClassTypes cT)
+	{
+		classType = cT;
 	}
 
 	public int getStats(int index) {
