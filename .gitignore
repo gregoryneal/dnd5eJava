@@ -2,3 +2,4 @@
 *.class
 test.java
 /.settings/
+/src/test.ser
