@@ -3,3 +3,4 @@
 test.java
 /.settings/
 /src/test.ser
+*.ser
