@@ -5,6 +5,8 @@ import serialization.Serialize;
 
 public class CurrencyObject implements Serialize
 {
+	private static final long serialVersionUID = -982785681424760835L;
+	
 	Currency currType;
 	int currAmount;
 	

@@ -1,6 +1,5 @@
 package character;
 
-import java.lang.Math;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -12,7 +11,8 @@ import stats.Stat;
 
 public class CharacterInstance implements Serialize
 {
-	
+	private static final long serialVersionUID = 7257487834512806718L;
+
 	private String notSet = "not set";
 	
 	//self explanatory

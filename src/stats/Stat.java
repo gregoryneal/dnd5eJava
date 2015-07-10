@@ -5,6 +5,7 @@ import serialization.Serialize;
 
 public class Stat implements Serialize
 {
+	private static final long serialVersionUID = 4105120964032349631L;
 	
 	private AbilityTypes ability;
 	private int abilityLvl;

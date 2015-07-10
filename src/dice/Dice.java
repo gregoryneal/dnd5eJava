@@ -8,9 +8,10 @@ import serialization.Serialize;
 
 public class Dice implements Serialize
 {
+	private static final long serialVersionUID = -624331525226334812L;
 	
-	private int numberOfRolls;
-	private int numberOfSides;
+	public int numberOfRolls;
+	public int numberOfSides;
 	
 	public static Dice NULL = new Dice(1,0);
 
