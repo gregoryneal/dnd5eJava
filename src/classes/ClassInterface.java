@@ -8,7 +8,7 @@ import abilities.AbilityTypes;
 import abilities.SkillTypes;
 import armor.ArmorTypes;
 import dice.Dice;
-import equipment.ToolTypes;
+import equipment.item.ToolTypes;
 
 public interface ClassInterface
 {
