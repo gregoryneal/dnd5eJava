@@ -2,7 +2,6 @@ package character;
 
 import character.CharacterInstance;
 import classes.*;
-import race.*;
 
 public class PlayerClassMediator
 {
