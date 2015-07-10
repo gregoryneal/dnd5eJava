@@ -8,11 +8,13 @@ import abilities.AbilityTypes;
 import abilities.SkillTypes;
 import armor.ArmorTypes;
 import dice.Dice;
-import equipment.ToolTypes;
+import equipment.item.ToolTypes;
 import serialization.Serialize;
 
 public class Barbarian implements ClassInterface, Serialize
 {
+	private static final long serialVersionUID = 2454871635329036753L;
+	
 	List<SkillTypes> st = new ArrayList<>();
 
 	public Barbarian() 
@@ -144,6 +146,33 @@ public class Barbarian implements ClassInterface, Serialize
 	public ClassTypes getClassType()
 	{
 		return ClassTypes.BARBARIAN;
+	}
+	
+	//-----------------------------------NOT INCLUDED IN CLASS INTEFRACE-----------------------------------//	
+	public int numRages(int level)
+	{
+		if(level <= 2)
+			return 2;
+		else if(level <= 5)
+			return 3;
+		else if(level <= 11)
+			return 4;
+		else if(level <= 16)
+			return 5;
+		else if(level <= 19)
+			return 6;
+		else
+			return Integer.MAX_VALUE;
+	}
+	
+	public int rageDamage(int level)
+	{
+		if(level <= 8)
+			return 2;
+		else if(level <= 15)
+			return 3;
+		else
+			return 4;
 	}
 
 }
