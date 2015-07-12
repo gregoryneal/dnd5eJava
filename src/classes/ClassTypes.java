@@ -25,17 +25,17 @@ public enum ClassTypes {
 		return str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase();
 	}
 	
-	public final List<Object> multiclassRequirements = new ArrayList<>();
+	public final List<Object> reqs = new ArrayList<>();
 	
 	private ClassTypes(MulticlassRequirement multiclassReq1, MulticlassRequirement multiclassReq2, String andOR)
 	{
-		this.multiclassRequirements.add(multiclassReq1);
+		this.reqs.add(multiclassReq1);
 		
 		//they only need one skill at a certain lvl
 		if(!(multiclassReq2.equals(MulticlassRequirement.NULL) && andOR.equals("")))
 		{
-			this.multiclassRequirements.add(multiclassReq2);
-			this.multiclassRequirements.add(andOR);
+			this.reqs.add(multiclassReq2);
+			this.reqs.add(andOR);
 		}
 	}
 }

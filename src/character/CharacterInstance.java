@@ -17,14 +17,14 @@ public class CharacterInstance implements Serialize
 	
 	//self explanatory
 	private String name;
-	private List<ClassTypes> classTypes;
+	private ClassTypes classType;
 	private RaceTypes race;
 	private List<Stat> stats = new ArrayList<>();
 
 	public CharacterInstance() 
 	{
 		name = notSet;
-		classTypes.add(ClassTypes.NONE);
+		classType = ClassTypes.NONE;
 		race = RaceTypes.NONE;
 		initializeStats();
 	}
@@ -52,14 +52,6 @@ public class CharacterInstance implements Serialize
 		}
 	}
 	
-	public void printClasses()
-	{
-		for(ClassTypes c : classTypes)
-		{
-			System.out.println(c.toString());
-		}
-	}
-	
 	public String getName()
 	{
 		if(!name.isEmpty())
@@ -83,14 +75,14 @@ public class CharacterInstance implements Serialize
 		race = human;
 	}
 	
-	public List<ClassTypes> getClassTypes()
+	public ClassTypes getClassType()
 	{
-		return classTypes;
+		return classType;
 	}
 	
-	public void setClassTypes(List<ClassTypes> cT)
+	public void setClassType(ClassTypes cT)
 	{
-		classTypes = cT;
+		classType = cT;
 	}
 	
 	public void setStat(AbilityTypes ability, int lvl)
@@ -102,17 +94,5 @@ public class CharacterInstance implements Serialize
 				stats.get(i).setLevel(lvl);
 			}
 		}
-	}
-	
-	public Stat getStat(AbilityTypes ability)
-	{
-		for(Stat s : stats)
-		{
-			if(s.getAbility().equals(ability))
-			{
-				return s;
-			}
-		}
-		return null;
 	}
 }
